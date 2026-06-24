@@ -1,0 +1,463 @@
+/* ============================================
+   ADMIN CSS REFATORADO - ESCALÁVEL
+   Usa variáveis do design-system.css
+   ============================================ */
+
+/* ====== BODY REFATORADO ====== */
+body {
+  padding-left: var(--sp-4);
+  transition: padding-left 0.22s ease;
+  background: var(--clr-bg-primary);
+  overflow-x: hidden;
+}
+
+body.gf-sidebar-open {
+  --gf-side-current: var(--gf-side-open);
+}
+
+.gfMainWrap {
+  max-width: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ====== HEADER/TOPBAR ====== */
+header.appTopbar, .appTopbar {
+  min-height: var(--sp-8);
+  height: var(--sp-8);
+  padding: 0 var(--sp-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  overflow: hidden;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.appBrand {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  min-width: 0;
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+
+.brandLogoBox {
+  width: 118px;
+  min-width: 118px;
+  max-width: 118px;
+  height: 48px;
+  min-height: 48px;
+  max-height: 48px;
+  padding: var(--sp-2);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.brandLogoBox img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--sp-1);
+  min-width: 0;
+  overflow: hidden;
+  line-height: 1.05;
+}
+
+.brandText strong {
+  display: block;
+  font-size: var(--fs-2xl);
+  line-height: 1.05;
+  font-weight: 1000;
+  letter-spacing: -0.035em;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.brandText small {
+  display: block;
+  font-size: 10.5px;
+  line-height: 1;
+  font-weight: 1000;
+  letter-spacing: 0.14em;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ====== DASHBOARD PRINCIPAL ====== */
+#pageDashboard {
+  background: linear-gradient(180deg, #eef7ff 0%, #f7fbff 42%, #f8fbff 100%);
+}
+
+#pageDashboard .v8Grid {
+  display: grid;
+  gap: var(--gap-grid);
+  margin: var(--sp-5) 0;
+}
+
+#pageDashboard .v8Kpi {
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--py-card);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--sp-2);
+  min-height: 132px;
+}
+
+#pageDashboard .v8Kpi b,
+#pageDashboard .v8Kpi .num {
+  font-size: var(--fs-4xl);
+  line-height: 1;
+  font-weight: 950;
+  letter-spacing: -1px;
+  color: #0b84ff;
+}
+
+#pageDashboard .v8Kpi small,
+#pageDashboard .v8Kpi p {
+  color: var(--clr-text-secondary);
+  font-weight: 750;
+  line-height: 1.35;
+  font-size: var(--fs-sm);
+}
+
+#pageDashboard .chartCard {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  padding: var(--py-card);
+}
+
+#pageDashboard .chartCard h3 {
+  font-size: var(--fs-2xl);
+  color: var(--clr-text-primary);
+  font-weight: 950;
+  letter-spacing: -0.3px;
+  margin: 0 0 var(--sp-4) 0;
+}
+
+/* ====== TICKET CARDS ====== */
+.gfDashTicketCard {
+  position: relative;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: var(--py-card);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 168px;
+}
+
+.gfDashTicketCard:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: #ef4444;
+}
+
+.gfDashTicketCard.progress:before {
+  background: #0b84ff;
+}
+
+.gfDashTicketCard.done:before {
+  background: #20b96d;
+}
+
+.gfDashTicketTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-2);
+}
+
+.gfDashTicketNum {
+  font-size: var(--fs-2xl);
+  line-height: 1;
+  font-weight: 1000;
+  color: #09285a;
+  letter-spacing: -0.3px;
+}
+
+.gfDashTicketHead h4 {
+  margin: 0;
+  color: #0b2f66;
+  font-size: var(--fs-xl);
+  line-height: 1.12;
+  font-weight: 1000;
+  letter-spacing: -0.02em;
+}
+
+.gfDashTicketDesc {
+  margin: var(--sp-2) 0 var(--sp-3) 0;
+  color: var(--clr-text-secondary);
+  font-size: var(--fs-sm);
+  font-weight: 750;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.gfDashTicketBottom {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, auto);
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.gfDashTicketActions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-2);
+  align-items: center;
+}
+
+.gfDashTicketActions .btn {
+  min-height: var(--h-button-sm);
+  border-radius: var(--radius-md);
+  padding: var(--py-button) var(--px-button);
+  font-size: var(--fs-sm);
+  font-weight: 950;
+}
+
+/* ====== INPUTS E FORMULÁRIOS ====== */
+.drawer input[type="text"],
+.drawer input[type="email"],
+.drawer textarea,
+.drawer select {
+  width: 100%;
+  padding: var(--py-button) var(--px-button);
+  font-size: var(--fs-sm);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  background: var(--clr-card);
+  color: var(--clr-text-primary);
+  box-sizing: border-box;
+}
+
+.drawer input:focus,
+.drawer textarea:focus {
+  outline: none;
+  border-color: #0b84ff;
+  box-shadow: 0 0 0 3px rgba(11, 132, 255, 0.1);
+}
+
+/* ====== MODAIS ====== */
+#gfOcModalBg.show {
+  display: block;
+  background: rgba(8, 20, 42, 0.28);
+  backdrop-filter: blur(2px);
+  z-index: 99998;
+}
+
+#gfOcModal.show {
+  display: flex;
+  position: fixed;
+  z-index: 99999;
+  left: 50%;
+  top: 52%;
+  transform: translate(-50%, -50%);
+  width: min(1120px, calc(100vw - 42px));
+  max-height: calc(100dvh - 52px);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  flex-direction: column;
+}
+
+#gfOcModal .gfOcModalHead {
+  background: var(--clr-bg-secondary);
+  border-bottom: 1px solid var(--clr-border);
+  padding: var(--sp-4);
+}
+
+#gfOcModal .gfOcModalBody {
+  background: var(--clr-bg-primary);
+  overflow: auto;
+  padding: var(--sp-5);
+}
+
+/* ====== DRAWERS ====== */
+.drawer {
+  background: var(--clr-card);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.drawer.show {
+  display: block;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  max-width: 480px;
+  z-index: 2147483591;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.drawerHead {
+  padding: var(--py-card);
+  border-bottom: 1px solid var(--clr-border);
+  background: var(--clr-bg-secondary);
+}
+
+.drawerBody {
+  padding: var(--py-card);
+  overflow: auto;
+}
+
+/* ====== BADGES E STATUS ====== */
+.badge {
+  display: inline-block;
+  padding: var(--sp-1) var(--sp-2);
+  font-size: var(--fs-xs);
+  font-weight: 800;
+  border-radius: var(--radius-full);
+  line-height: 1;
+}
+
+.badge.new {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.badge.progress {
+  background: #eaf4ff;
+  color: #0b84ff;
+}
+
+.badge.done {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 479px) {
+  header.appTopbar, .appTopbar {
+    min-height: 74px;
+    height: 74px;
+    padding: var(--sp-2);
+    gap: var(--sp-2);
+  }
+
+  .brandLogoBox {
+    width: 82px;
+    min-width: 82px;
+    max-width: 82px;
+    height: 36px;
+    min-height: 36px;
+    max-height: 36px;
+  }
+
+  .brandText strong {
+    font-size: var(--fs-lg);
+  }
+
+  #pageDashboard .v8Grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--gap-grid);
+  }
+
+  #pageDashboard .v8Kpi {
+    min-height: 120px;
+    padding: var(--sp-3);
+  }
+
+  .gfDashTicketCard {
+    min-height: 154px;
+    padding: var(--sp-3);
+  }
+
+  .gfDashTicketBottom {
+    grid-template-columns: 1fr;
+    gap: var(--gap-grid);
+  }
+
+  .drawer.show {
+    max-width: 100vw;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+  #pageDashboard .v8Grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gfDashTicketBottom {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  #pageDashboard .v8Grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  #pageDashboard .v8Grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  #pageDashboard #v9LatestList .gfDashTicketList,
+  #pageDashboard #v9CriticalList .gfDashTicketList {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--gap-grid);
+  }
+}
+
+/* ====== ACESSIBILIDADE ====== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
